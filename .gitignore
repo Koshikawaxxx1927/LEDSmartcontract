@@ -1,0 +1,6 @@
+led_frontend/.env
+led_frontend/node_modules
+led_frontend/.next
+led_smartcontract/node_modules
+led_smartcontract/artifacts
+led_smartcontract/cache
