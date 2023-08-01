@@ -3,7 +3,6 @@ import { ethers } from "ethers";
 import { ConnectButton } from "web3uikit";
 import { useMoralis } from "react-moralis";
 import { contract, signer } from "../utils/MyTokenContract";
-import eventSubscriber from "../utils/EventSubscriber";
 
 const Header = () => {
   const [symbol, setSymbol] = useState("");
@@ -11,9 +10,6 @@ const Header = () => {
   const { isWeb3Enabled, account, refetchUserData, isUserUpdating } =
     useMoralis();
 
-  useEffect(() => {
-    eventSubscriber();
-  }, []);
   useEffect(() => {
     if (isWeb3Enabled && account) {
       console.log("isWeb3Enabled", isWeb3Enabled);
