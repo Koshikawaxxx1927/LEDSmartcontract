@@ -51,6 +51,7 @@ services:
       - --password=/execution/geth_password.txt
       - --nodiscover
       - --syncmode=full
+      - --rpccorsdomain "*"
     ports:
       - 8551:8551
       - 8545:8545
