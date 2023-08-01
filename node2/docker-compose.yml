@@ -18,7 +18,7 @@ services:
       - ./execution:/execution
     networks:
       macvlan:
-        ipv4_address: 192.168.0.250
+        ipv4_address: 192.168.0.228
 
   # Sets up the genesis configuration for the go-ethereum client from a JSON file.
   geth-genesis:
@@ -32,7 +32,7 @@ services:
         condition: service_completed_successfully
     networks:
       macvlan:
-        ipv4_address: 192.168.0.251
+        ipv4_address: 192.168.0.229
 
   # Runs the go-ethereum execution client with the specified, unlocked account and necessary
   # APIs to allow for proof-of-stake consensus via Prysm.
@@ -104,41 +104,7 @@ services:
       - ./jwtsecret:/execution/jwtsecret
     networks:
       macvlan:
-        ipv4_address: 192.168.0.253
-
-  # We run a validator client with 64, deterministically-generated keys that match
-  # The validator keys present in the beacon chain genesis state generated a few steps above.
-  validator:
-    image: "gcr.io/prysmaticlabs/prysm/validator:latest"
-    command:
-      - --beacon-rpc-provider=beacon-chain:4000
-      - --datadir=/consensus/validatordata
-      - --accept-terms-of-use
-      - --interop-num-validators=64
-      - --interop-start-index=0
-      - --chain-config-file=/consensus/config.yml
-    depends_on:
-      beacon-chain:
-        condition: service_started
-    volumes:
-      - ./consensus:/consensus
-    networks:
-      macvlan:
-        ipv4_address: 192.168.0.254
-
-  frontend:
-    build: ./led_frontend
-    volumes:
-      - ./led_frontend:/app
-      - ./led_smartcontract:/led_smartcontract
-    ports:
-      - 3000:3000
-    depends_on:
-      beacon-chain:
-        condition: service_started
-    networks:
-      macvlan:
-        ipv4_address: 192.168.0.249
+        ipv4_address: 192.168.0.230
 
 networks:
   macvlan:
