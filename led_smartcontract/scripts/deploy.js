@@ -8,9 +8,9 @@ const hre = require("hardhat");
 const fs = require("fs");
 
 async function main() {
-  const MyToken = await hre.ethers.getContractFactory("Token");
+  const MyToken = await hre.ethers.getContractFactory("LED");
 
-  const myToken = await MyToken.deploy("Token", "MYT");
+  const myToken = await MyToken.deploy("LEDToken", "LED");
   console.log("MyToken contract deployed to:", await myToken.getAddress());
 
   const abi = myToken.interface.format("json");

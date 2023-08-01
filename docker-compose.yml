@@ -124,7 +124,7 @@ services:
     networks:
       macvlan:
         ipv4_address: 192.168.0.254
-  
+
   frontend:
     build: ./led_frontend
     volumes:
@@ -134,8 +134,7 @@ services:
       - 3000:3000
     depends_on:
       beacon-chain:
-        condition:
-          service_started
+        condition: service_started
     networks:
       macvlan:
         ipv4_address: 192.168.0.249
@@ -144,7 +143,7 @@ networks:
   macvlan:
     driver: macvlan
     driver_opts:
-      parent: eno1
+      parent: en0
     ipam:
       config:
         - subnet: 192.168.0.0/24

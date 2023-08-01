@@ -23,10 +23,18 @@ const TokenInfo = () => {
   };
 
   return (
-    <div>
-      <p>Token name: {tokenName}</p>
-      <p>Token symbol: {tokenSymbol}</p>
-      <p>Total supply: {totalSupply}</p>
+    <div className="bg-slate-100 max-w-md mx-auto py-5 rounded-lg px-2 sm:px-0">
+      <div className="space-y-4 mx-auto my-0 max-w-sm">
+        <div className="flex justify-around text-xl text-white p-3 bg-slate-500 shadow rounded hover:bg-slate-400">
+          <p>Token name:</p> <p>{tokenName}</p>
+        </div>
+        <div className="flex justify-around text-xl text-white p-3 bg-slate-500 shadow rounded hover:bg-slate-400">
+          <p>Token symbol:</p> <p>{tokenSymbol}</p>
+        </div>
+        <div className="flex justify-around text-xl text-white p-3 bg-slate-500 shadow rounded hover:bg-slate-400">
+          <p>Total supply:</p> <p>{totalSupply}</p>
+        </div>
+      </div>
     </div>
   );
 };
