@@ -52,6 +52,7 @@ services:
       - --nodiscover
       - --syncmode=full
       - --http.corsdomain=*
+      - --authrpc.addr=*
     ports:
       - 8551:8551
       - 8545:8545
