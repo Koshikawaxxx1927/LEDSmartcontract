@@ -3,11 +3,12 @@ services:
   #Creates a genesis state for the beacon chain using a YAML configuration file and
   # a deterministic set of 64 validators.
   create-beacon-chain-genesis:
-    image: "gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest"
+    image: "eth2spectrum/prysm-beacon-chain-arm64:latest"
     platform: linux/arm64
     command:
       - testnet
       - generate-genesis
+      - --accept-terms-of-use=true
       - --fork=bellatrix
       - --num-validators=64
       - --output-ssz=/consensus/genesis.ssz
@@ -75,7 +76,7 @@ services:
   # The account used in go-ethereum is set as the suggested fee recipient for transactions
   # proposed via the validators attached to the beacon node.
   beacon-chain:
-    image: "gcr.io/prysmaticlabs/prysm/beacon-chain:latest"
+    image: "eth2spectrum/prysm-beacon-chain-arm64:latest"
     command:
       - --datadir=/consensus/beacondata
       # No peers to sync with in this testnet, so setting to 0
@@ -113,7 +114,7 @@ networks:
   macvlan:
     driver: macvlan
     driver_opts:
-      parent: eno1
+      parent: wlan0
     ipam:
       config:
         - subnet: 192.168.0.0/24
