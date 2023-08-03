@@ -9,6 +9,9 @@ ln -s ./prysm/cmd/beacon-chain-v4.0.7-linux-arm64 ./beacon-chain
 ln -s ./prysm/cmd/validator-v4.0.7-linux-arm64 ./validator
 ln -s ./prysm/cmd/prysmctl-v4.0.7-linux-arm64 ./prysmctl
 
+chmod 777 ./beacon-chain
+chmod 777 ./validator
+chmod 777 ./prysmctl
 
 # geth install & build
 git clone https://github.com/ethereum/go-ethereum && cd go-ethereum
