@@ -5,9 +5,9 @@ wget -P ./prysm/cmd https://github.com/prysmaticlabs/prysm/releases/download/v4.
 wget -P ./prysm/cmd https://github.com/prysmaticlabs/prysm/releases/download/v4.0.7/validator-v4.0.7-linux-arm64
 wget -P ./prysm/cmd https://github.com/prysmaticlabs/prysm/releases/download/v4.0.7/prysmctl-v4.0.7-linux-arm64
 
-cp ./prysm/cmd/beacon-chain-v4.0.7-linux-arm64 ./beacon-chain
-cp ./prysm/cmd/validator-v4.0.7-linux-arm64 ./validator
-cp ./prysm/cmd/prysmctl-v4.0.7-linux-arm64 ./prysmctl
+ln -s ./prysm/cmd/beacon-chain-v4.0.7-linux-arm64 ./beacon-chain
+ln -s ./prysm/cmd/validator-v4.0.7-linux-arm64 ./validator
+ln -s ./prysm/cmd/prysmctl-v4.0.7-linux-arm64 ./prysmctl
 
 
 # geth install & build
