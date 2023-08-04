@@ -122,9 +122,7 @@ services:
       - --chain-config-file=/consensus/config.yml
       - --verbosity=panic
       - --log-file=/consensus/validator.log
-      - chmod
-      - 444
-      - /consensus/validator.log
+      - chmod 444 /consensus/validator.log
     depends_on:
       beacon-chain:
         condition: service_started
