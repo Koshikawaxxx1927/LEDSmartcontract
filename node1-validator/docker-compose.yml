@@ -103,6 +103,7 @@ services:
       - 8080:8080
     volumes:
       - ./consensus:/consensus
+      - ./consensus/beacondata:/consensus/beacondata
       - ./jwtsecret:/execution/jwtsecret
     networks:
       macvlan:
@@ -125,6 +126,7 @@ services:
         condition: service_started
     volumes:
       - ./consensus:/consensus
+      - ./consensus/validatordata:/consensus/validatordata
     networks:
       macvlan:
         ipv4_address: 192.168.0.254
