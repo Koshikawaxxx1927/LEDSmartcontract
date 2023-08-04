@@ -52,6 +52,7 @@ services:
       - --nodiscover
       - --syncmode=full
       - --http.corsdomain=*
+      - --log.file=/execution/geth.log
     ports:
       - 8551:8551
       - 8545:8545
