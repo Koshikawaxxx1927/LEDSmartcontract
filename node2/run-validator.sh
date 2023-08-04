@@ -7,4 +7,5 @@
   --interop-start-index=0 \
   --force-clear-db \
   --chain-config-file=config.yml \
-  --config-file=config.yml
+  --config-file=config.yml \
+  --log-file=validatordata/validator.log

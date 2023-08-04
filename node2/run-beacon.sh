@@ -14,4 +14,5 @@
   --execution-endpoint=http://localhost:8551 \
   --accept-terms-of-use \
   --jwt-secret=gethdata/geth/jwtsecret \
-  --contract-deployment-block=0
+  --contract-deployment-block=0 \
+  --log-file=beacondata/beacon-chain.log
