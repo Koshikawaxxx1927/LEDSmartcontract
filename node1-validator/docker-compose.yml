@@ -91,7 +91,7 @@ services:
       - --accept-terms-of-use
       - --jwt-secret=/execution/jwtsecret
       - --suggested-fee-recipient=0x123463a4b065722e99115d6c222f267d9cabb524
-      - --log-file=/consensus/beacon-chain.log
+      - --log-file=/consensus/beacondata/beacon-chain.log
     depends_on:
       geth:
         condition: service_started
@@ -119,7 +119,7 @@ services:
       - --interop-num-validators=64
       - --interop-start-index=0
       - --chain-config-file=/consensus/config.yml
-      - --log-file=/consensus/validator.log
+      - --log-file=/consensus/validatordata/validator.log
     depends_on:
       beacon-chain:
         condition: service_started
