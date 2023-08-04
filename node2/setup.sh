@@ -15,8 +15,8 @@ chmod 777 ./prysmctl
 
 # geth install & build
 git clone https://github.com/ethereum/go-ethereum && cd go-ethereum
-# geth v12-stable version
-git checkout e501b3b05db8e169f67dc78b7b59bc352b3c638d
+# # geth v12-stable version
+# git checkout e501b3b05db8e169f67dc78b7b59bc352b3c638d
 make geth
 cp ./build/bin/geth ../geth
 cd ..
