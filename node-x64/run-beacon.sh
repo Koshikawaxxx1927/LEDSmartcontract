@@ -4,7 +4,6 @@
 
 ./beacon-chain \
   --datadir=beacondata \
-  --jwt-secret=gethdata/geth/jwtsecret \
   --min-sync-peers=0 \
   --genesis-state=genesis.ssz \
   --bootstrap-node= \
@@ -13,4 +12,5 @@
   --chain-id=32382 \
   --execution-endpoint=http://localhost:8551 \
   --accept-terms-of-use \
+  --jwt-secret=gethdata/geth/jwtsecret \
   --suggested-fee-recipient=0x123463a4b065722e99115d6c222f267d9cabb524
